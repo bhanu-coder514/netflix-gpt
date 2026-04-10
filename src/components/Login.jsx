@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { adduser } from '../utils/userSlice';
-import { PHOTOurl } from '../utils/constants';
+import { BG_IMG, PHOTOurl } from '../utils/constants';
 
 const Login = () => {
   const [isSingInForm, setIsSingInForm] = useState(true);
@@ -84,7 +84,7 @@ const Login = () => {
       <Header />
       <div className='absolute'>
         <img
-          src='https://assets.nflxext.com/ffe/siteui/vlv3/fc9ebadf-d77a-4f9b-a0dd-499af5178dc5/web/IN-en-20260330-TRIFECTA-perspective_81d2307f-4ee1-416d-8721-ac2be7b2da1d_large.jpg'
+          src={BG_IMG}
           alt='bg-image'
         />
       </div>
