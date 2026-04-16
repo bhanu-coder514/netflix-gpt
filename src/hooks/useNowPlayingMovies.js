@@ -9,8 +9,6 @@ const useNowPlayingMovies = () => {
     // fetch data from TMBD api and put into store
     const dispatch = useDispatch();
 
-    const nowPlayingMovies = useSelector(store => store.movies.nowPlayingMovies);
-
     const getNowPlayingMovies = async () => {
         const data = await fetch(
             'https://api.themoviedb.org/3/movie/now_playing?page=1',
@@ -22,7 +20,7 @@ const useNowPlayingMovies = () => {
 
     useEffect(() => {
 
-        !nowPlayingMovies &&  getNowPlayingMovies();
+     getNowPlayingMovies();
         
     }, []);
 }

@@ -9,8 +9,6 @@ const useTopRatedMovies = () => {
     // fetch data from TMBD api and put into store
     const dispatch = useDispatch();
 
-    const TopRatedMovies = useSelector(store => store.movies.topRatedMovies);
-
     const getTopRatedMovies = async () => {
         const data = await fetch(
             'https://api.themoviedb.org/3/movie/top_rated?page=1',
@@ -22,7 +20,7 @@ const useTopRatedMovies = () => {
 
     useEffect(() => {
 
-        !TopRatedMovies && getTopRatedMovies();
+      getTopRatedMovies();
 
     }, []);
 }
